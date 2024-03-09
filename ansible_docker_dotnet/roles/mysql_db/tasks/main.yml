@@ -1,0 +1,8 @@
+---
+- name: Create MySQL data directory
+  file:
+    path: /opt/mysql_data
+    state: directory
+
+- name: Run docker-compose for MySQL database
+  command: "docker-compose up -d"
