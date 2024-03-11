@@ -49,7 +49,7 @@ The variables.tf file contains variables that are common across envs, but with p
 
 The Terraform script provided creates a Ubuntu AWS EC2 instance, installs Ansible executes the previously created playbook. It defines an AWS provider specifying the desired region anf creates an EC2 instance with the specified AMI, instance type and key pair. It also includes user data, a bash script to update the package list and install Ansible that runs on instance launch. It declares an output variable that provides the public IP address of the EC2 instance. Lastly, the null_resource uses the local-exec provisioner to run the ansible-playbook command on the EC2 instance, taking in the previously outputted public IP address.
 
-To run it, replace the placeholders `REGION`, `AMI`, `KEY_PAIR_NAME` and `PRIVATE_KEY_PATH` with your own and the execute the following commands:
+To run it, replace the placeholders `REGION`, `AMI`, `KEY_PAIR_NAME` and `PRIVATE_KEY_PATH` with your own and then execute the following commands:
 
 ``terraform init``
 
