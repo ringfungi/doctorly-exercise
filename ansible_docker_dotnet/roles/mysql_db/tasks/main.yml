@@ -1,7 +1,7 @@
 ---
 - name: Create MySQL data directory
   file:
-    path: /opt/mysql_data
+    path: ~/mysql_data
     state: directory
 
 - name: Run docker-compose for MySQL database

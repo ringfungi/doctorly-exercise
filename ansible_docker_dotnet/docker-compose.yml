@@ -1,15 +1,19 @@
 version: '3'
 services:
   dotnet_app:
-    image: mcr.microsoft.com/dotnet/aspnet:8.0
+    build:
+      context: .
+      dockerfile: Dockerfile
     ports:
       - "8080:80"
   mysql_db:
     image: mysql:latest
+    volumes:
+      - ~/mysql_data:/var/lib/mysql
     environment:
       MYSQL_ROOT_PASSWORD: root_password!
       MYSQL_DATABASE: myappdb
       MYSQL_USER: myappuser
       MYSQL_PASSWORD: user_password!
     ports:
-      - "3306:3306"
+      - "3307:3306"

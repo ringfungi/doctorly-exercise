@@ -1,7 +1,6 @@
 ---
 - name: Deploy Docker Stack Locally
   hosts: localhost
-  become: true
   roles:
     - role: dotnet_app
     - role: mysql_db
